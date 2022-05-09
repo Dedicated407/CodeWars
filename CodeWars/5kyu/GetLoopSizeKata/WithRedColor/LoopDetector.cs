@@ -8,7 +8,7 @@ public class LoopDetector
         public bool IsRed { get; set; } = false;
     }
 
-    public static Node CreateChain(int size, int loopSize)
+    public static Node CreateChain(int tailSize, int loopSize)
     {
         var startNode = new Node();
         var nextNode = new Node();
@@ -26,7 +26,7 @@ public class LoopDetector
             nextNode = node;
             count++;
             
-            if (count == size)
+            if (count == tailSize)
             {
                 flag = false;
             }
